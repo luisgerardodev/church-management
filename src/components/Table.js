@@ -21,14 +21,16 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-function createData(name, age, ministry, phone) {
-  return { name, age, ministry, phone };
-}
+let rows = [];
 
-const rows = [
-  createData('Luis Gerardo', 24, 'Education', '829-341-5555'),
-  createData('Isaias Gonzalez', 23, 'Multimedia', '809-236-5555'),
-];
+// function createData(name, age, ministry, phone) {
+//   return { name, age, ministry, phone };
+// }
+
+// const rows = [
+//   createData('Luis Gerardo', 24, 'Education', '829-341-5555'),
+//   createData('Isaias Gonzalez', 23, 'Multimedia', '809-236-5555'),
+// ];
 
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -201,6 +203,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function EnhancedTable(props) {
+  rows = props.members;
+  console.log(rows);
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('name');
