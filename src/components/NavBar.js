@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavBar = () => {
+const NavBar = ({onRouteChange}) => {
   const classes = useStyles();
 
   return (
@@ -35,7 +35,7 @@ const NavBar = () => {
           <Typography variant="h6" className={classes.title}>
             Church Management App
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onClick={() => onRouteChange('signout')}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

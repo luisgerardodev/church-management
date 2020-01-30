@@ -21,13 +21,7 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-let rows = [];    
-fetch('http://localhost:3000/', {
-              method: 'get',
-              headers: {'Content-Type': 'application/json'},
-          })
-              .then(res => res.json())
-              .then(data => rows.push(data));
+let rows = [];
 
 // function createData(name, age, ministry, phone) {
 //   return { name, age, ministry, phone };
@@ -209,6 +203,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function EnhancedTable(props) {
+  rows = props.members;
+  console.log(rows);
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('name');
