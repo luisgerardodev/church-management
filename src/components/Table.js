@@ -25,11 +25,9 @@ function createData(name, age, ministry, phone) {
   return { name, age, ministry, phone };
 }
 
-
 const rows = [
   createData('Luis Gerardo', 24, 'Education', '829-341-5555'),
   createData('Isaias Gonzalez', 23, 'Multimedia', '809-236-5555'),
-  
 ];
 
 function desc(a, b, orderBy) {
@@ -202,7 +200,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function EnhancedTable() {
+export default function EnhancedTable(props) {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('name');
