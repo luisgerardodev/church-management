@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavBar = ({onRouteChange}) => {
+const NavBar = ({onRouteChange, user}) => {
   const classes = useStyles();
 
   return (

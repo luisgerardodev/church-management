@@ -6,13 +6,12 @@ import { Container } from '@material-ui/core';
 import SignIn from './components/SignIn';
 
 const initialState = {
-  isSignedIn: false,
   members: [],
   route: 'signin',
   user: {
     id: '',
     username: '',
-    
+    isAdmin: false
   }
 }
 
@@ -51,12 +50,12 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, route, members } = this.state;
+    const { user, route, members } = this.state;
     return (
     <div>
       { route === 'home'
         ? <div>
-            <NavBar onRouteChange={this.onRouteChange} />
+            <NavBar onRouteChange={this.onRouteChange} user={user}/>
             <Container>
               <Table members={ members }/>
             </Container>
